@@ -1,0 +1,58 @@
+#
+# Ci-dessous la config qui permet de lancer ontologie-rda-fr-docker
+#
+# Remarque: avant de lancer docker-compose up, il faut régler le fichier .env
+# en partant du fichier .env-dist qui donne les variables d'environnements
+# à personnaliser et des exemples de valeurs.
+#
+
+version: "3.5"
+
+services:
+
+  ####################################
+  # ontologie-rda-fr
+  # Interface web de rdafr.fr
+  ontologie-rda-fr:
+    image: abesesr/ontologie-rda-fr:${ONTOLOGIE_RDA_FR_VERSION}
+    container_name: ontologie-rda-fr
+    restart: unless-stopped
+    ports:
+      - ${ONTOLOGIE_RDA_FR_HTTP_PORT}:80
+    labels:
+      # pour envoyer les logs dans le puits de log de l'abes
+      - "co.elastic.logs/enabled=true"
+      - "co.elastic.logs/processors.add_fields.target="
+      - "co.elastic.logs/processors.add_fields.fields.abes_appli=ontologie-rda-fr"
+      - "co.elastic.logs/processors.add_fields.fields.abes_middleware=nginx"
+      # pour que les mises à jour de cette image soient auto-déployées
+      # par watchtower cf docker-compose.watchtower.yml
+      - "com.centurylinklabs.watchtower.scope=ontologie-rda-fr-watchtower-scope"   
+
+
+
+  #######################################
+  # ontologie-rda-fr-watchtower
+  # Conteneur chargé de mettre à jour automatiquement toutes les 60 secondes 
+  # l'image docker du conteneur ontologie-rda-fr
+  # Plus d'info : https://containrrr.dev/watchtower
+  ontologie-rda-fr-watchtower:
+    image: containrrr/watchtower:1.4.0
+    container_name: ontologie-rda-fr-watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      WATCHTOWER_CLEANUP: "true"
+      WATCHTOWER_POLL_INTERVAL: 60
+      WATCHTOWER_DEBUG: "false"
+      WATCHTOWER_NO_STARTUP_MESSAGE: "true"
+      WATCHTOWER_WARN_ON_HEAD_FAILURE: "never"
+      WATCHTOWER_RUN_ONCE: ${ONTOLOGIE_RDA_FR_WATCHTOWER_RUN_ONCE}
+      WATCHTOWER_NOTIFICATIONS: "slack"
+      WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL: ${ONTOLOGIE_RDA_FR_WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL}
+      WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER: ${ONTOLOGIE_RDA_FR_WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER}
+      WATCHTOWER_NOTIFICATION_SLACK_CHANNEL: "#notifs-github"
+      WATCHTOWER_SCOPE: "ontologie-rda-fr-watchtower-scope"
+    labels:
+      - "com.centurylinklabs.watchtower.scope=ontologie-rda-fr-watchtower-scope"
+
