@@ -87,3 +87,7 @@ Il n'est pas nécessaire de sauvegarder autre chose car c'est un site web qui ne
 3) Le serveur où est hébergé https://rdafr.fr utilise ce présent dépôt pour savoir quel conteneur docker déployer. Il va alors détecter qu'une nouvelle version de l'image docker est disponible (à l'aide de l'outil [watchtower](https://containrrr.dev/watchtower/)) et va l'auto-déployer sur https://rdafr.fr
 
 D'un point de vue utiliseur le workflow pour mettre à jour https://rdafr.fr consiste uniquement à modifier le contenu de https://github.com/transition-bibliographique/ontologie-rda-fr et à attendre quelques minute le déploiement automatique sur https://rdafr.fr
+
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vSUzsWeHMf50ul8jkLPOmZH9ALbxHri6dlSxUx4wqyXGlevBv1d-nP85AqacffzN4U2FjvCR1Z-gRRy/pub?w=1361&amp;h=928">
+
+([lien](https://docs.google.com/drawings/d/16lJ6st01xze2UtEQW263rKzV42EIgX4-BBSJfRNYStU/edit) pour modifier le schéma)
