@@ -88,6 +88,6 @@ Il n'est pas nécessaire de sauvegarder autre chose car c'est un site web qui ne
 
 D'un point de vue utiliseur le workflow pour mettre à jour https://rdafr.fr consiste uniquement à modifier le contenu de https://github.com/transition-bibliographique/ontologie-rda-fr et à attendre quelques minute le déploiement automatique sur https://rdafr.fr
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSUzsWeHMf50ul8jkLPOmZH9ALbxHri6dlSxUx4wqyXGlevBv1d-nP85AqacffzN4U2FjvCR1Z-gRRy/pub?w=1361&amp;h=928">
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vSUzsWeHMf50ul8jkLPOmZH9ALbxHri6dlSxUx4wqyXGlevBv1d-nP85AqacffzN4U2FjvCR1Z-gRRy/pub?w=1145&amp;h=820">
 
 ([lien](https://docs.google.com/drawings/d/16lJ6st01xze2UtEQW263rKzV42EIgX4-BBSJfRNYStU/edit) pour modifier le schéma)
