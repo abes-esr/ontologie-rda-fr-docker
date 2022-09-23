@@ -7,9 +7,10 @@ Configuration docker 🐳 pour déployer [l'ontologie rda-fr](https://github.com
 
 ## URLs de ontologie-rda-fr
 
-Les URLs correspondantes aux déploiements en local, test et prod sont les suivantes :
+Les URLs correspondantes aux déploiements en local, dev, test et prod sont les suivantes :
 
 - local : http://127.0.0.1:13080/
+- test : http://diplotaxis1-dev.v212.abes.fr:13080/ => mappée sur https://dev.rdafr.fr
 - test : http://diplotaxis1-test.v202.abes.fr:13080/ => mappée sur https://test.rdafr.fr
 - prod : http://diplotaxis1-prod.v102.abes.fr:13080/ => mappée sur https://rdafr.fr
 
