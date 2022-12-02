@@ -83,7 +83,7 @@ Il n'est pas nécessaire de sauvegarder autre chose car c'est un site web qui ne
 ## Architecture
 
 1) L'ontologie RDA-FR est conçue sur le github suivant https://github.com/transition-bibliographique/ontologie-rda-fr : elle contient un fichier README.md et (plus tard) des fichiers OWL
-2) Lorsque le fichier [README.md](https://github.com/transition-bibliographique/ontologie-rda-fr/blob/develop/README.md) est modifié, une [github action](https://github.com/transition-bibliographique/ontologie-rda-fr/actions/workflows/build-pub-rdafr.fr-docker-image.yml) détecte la modification et va générer et publier automatiquement une nouvelle version du site web https://rdafr.fr
+2) Lorsque le fichier [README.md](https://github.com/transition-bibliographique/ontologie-rda-fr/blob/develop/README.md) est modifié, une [github action](https://github.com/transition-bibliographique/ontologie-rda-fr/actions/workflows/build-pub-rdafr.fr-docker-image.yml) détecte la modification et va générer et publier automatiquement une nouvelle version de l'[image docker]((https://hub.docker.com/r/transitionbibliographique/ontologie-rda-fr) contenant un serveur nginx + la page HTML du site web de l'ongologie RDA-FR
 3) Le serveur où est hébergé https://rdafr.fr utilise ce présent dépôt pour savoir quel conteneur docker déployer. Il va alors détecter qu'une nouvelle version de l'image docker est disponible (à l'aide de l'outil [watchtower](https://containrrr.dev/watchtower/)) et va l'auto-déployer sur https://rdafr.fr
 
 D'un point de vue utiliseur le workflow pour mettre à jour https://rdafr.fr consiste uniquement à modifier le contenu de https://github.com/transition-bibliographique/ontologie-rda-fr et à attendre quelques minute le déploiement automatique sur https://rdafr.fr
