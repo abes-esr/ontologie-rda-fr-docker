@@ -17,6 +17,7 @@ services:
     image: transitionbibliographique/ontologie-rda-fr:${ONTOLOGIE_RDA_FR_VERSION}
     container_name: ontologie-rda-fr
     restart: unless-stopped
+    mem_limit: ${MEM_LIMIT}
     ports:
       - ${ONTOLOGIE_RDA_FR_HTTP_PORT}:80
     labels:
@@ -39,6 +40,7 @@ services:
   ontologie-rda-fr-watchtower:
     image: containrrr/watchtower:1.4.0
     container_name: ontologie-rda-fr-watchtower
+    mem_limit: ${MEM_LIMIT}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
