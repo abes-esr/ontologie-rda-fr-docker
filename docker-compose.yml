@@ -14,7 +14,7 @@ services:
   # ontologie-rda-fr
   # Interface web de rdafr.fr
   ontologie-rda-fr:
-    image: abesesr/ontologie-rda-fr:${ONTOLOGIE_RDA_FR_VERSION}
+    image: transitionbibliographique/ontologie-rda-fr:${ONTOLOGIE_RDA_FR_VERSION}
     container_name: ontologie-rda-fr
     restart: unless-stopped
     ports:
