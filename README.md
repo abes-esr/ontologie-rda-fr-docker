@@ -2,7 +2,9 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/transitionbibliographique/ontologie-rda-fr.svg)](https://hub.docker.com/r/transitionbibliographique/ontologie-rda-fr/)
 
-Configuration docker 🐳 pour déployer [l'ontologie rda-fr](https://github.com/transition-bibliographique/ontologie-rda-fr) sur le site https://rdafr.fr (travail en cours)
+Configuration docker 🐳 permettant de déployer l'ontologie rda-fr sur le site https://rdafr.fr
+
+Les sources du site sont gérées sur le dépôt github suivant : https://github.com/transition-bibliographique/ontologie-rda-fr
 
 
 ## URLs de ontologie-rda-fr
