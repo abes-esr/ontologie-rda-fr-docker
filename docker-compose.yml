@@ -40,6 +40,7 @@ services:
   ontologie-rda-fr-watchtower:
     image: containrrr/watchtower:1.4.0
     container_name: ontologie-rda-fr-watchtower
+    restart: unless-stopped
     mem_limit: ${MEM_LIMIT}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
