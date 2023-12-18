@@ -40,7 +40,7 @@ services:
   # l'image docker du conteneur ontologie-rda-fr
   # Plus d'info : https://containrrr.dev/watchtower
   ontologie-rda-fr-watchtower:
-    image: containrrr/watchtower:1.4.0
+    image: containrrr/watchtower:1.7.1
     container_name: ontologie-rda-fr-watchtower
     restart: unless-stopped
     mem_limit: ${MEM_LIMIT}
