@@ -29,7 +29,6 @@ services:
       - "co.elastic.logs/processors.add_fields.fields.abes_appli=ontologie-rda-fr"
       - "co.elastic.logs/processors.add_fields.fields.abes_middleware=nginx"
       # pour que les mises à jour de cette image soient auto-déployées
-      # par watchtower cf docker-compose.watchtower.yml
       - "com.centurylinklabs.watchtower.scope=ontologie-rda-fr-watchtower-scope"   
 
 
